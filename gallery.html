@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – KLDiscovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <strong style="color:white">KLDiscovery</strong>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="food.html">Food</a>
+        <a href="tips.html">Travel Tips</a>
+        <a href="gallery.html">Gallery</a>
+    </div>
+</nav>
+
+<section>
+    <h2>Gallery</h2>
+    <div class="grid">
+
+        <!-- KL Skyline card with mini slideshow -->
+        <div class="card">
+            <div class="mini-slideshow">
+                <img src="images/kl-skyline-1.jpg" alt="KL Skyline 1">
+                <img src="images/kl-skyline-2.jpg" alt="KL Skyline 2">
+                <img src="images/kl-skyline-3.jpg" alt="KL Skyline 3">
+            </div>
+            <div class="overlay">
+                <h3>KL Skyline</h3>
+                <p>View multiple angles of the iconic skyline.</p>
+            </div>
+        </div>
+
+        <!-- Petronas Towers card with mini slideshow -->
+        <div class="card">
+            <div class="mini-slideshow">
+                <img src="images/petronas-1.avif" alt="Petronas 1">
+                <img src="images/petronas-2.webp" alt="Petronas 2">
+                <img src="images/petronas-3.avif" alt="Petronas 3">
+            </div>
+            <div class="overlay">
+                <h3>Petronas Towers</h3>
+                <p>See the towers from day and night perspectives.</p>
+            </div>
+        </div>
+
+        <!-- Batu Caves card with mini slideshow -->
+        <div class="card">
+            <div class="mini-slideshow">
+                <img src="images/batu-caves-1.jpg" alt="Batu Caves 1">
+                <img src="images/batu-caves-2.avif" alt="Batu Caves 2">
+		<img src="images/batu-caves-3.jpg" alt="Batu Caves 3">
+            </div>
+            <div class="overlay">
+                <h3>Batu Caves</h3>
+                <p>Explore the limestone hill and temples.</p>
+            </div>
+        </div>
+
+        <!-- Street Food Market card -->
+        <div class="card">
+            <div class="mini-slideshow">
+                <img src="images/street-food-1.jpg" alt="Street Food 1">
+                <img src="images/street-food-2.jpg" alt="Street Food 2">
+		<img src="images/street-food-3.jpg" alt="Street Food 3">
+            </div>
+            <div class="overlay">
+                <h3>Street Food Market</h3>
+                <p>Delicious local food in the heart of KL.</p>
+            </div>
+        </div>
+
+        <!-- KL Tower View card -->
+        <div class="card">
+            <div class="mini-slideshow">
+                <img src="images/kl-tower-1.avif" alt="KL Tower View 1">
+                <img src="images/kl-tower-2.webp" alt="KL Tower View 2">
+		<img src="images/kl-tower-3.jpeg" alt="KL Tower View 3">
+            </div>
+            <div class="overlay">
+                <h3>KL Tower View</h3>
+                <p>Enjoy panoramic city views from the tower.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; by KLDiscovery</p>
+</footer>
+
+<!-- Mini slideshow JS -->
+<script>
+const miniSlideshows = document.querySelectorAll('.mini-slideshow');
+
+miniSlideshows.forEach(slideshow => {
+    let index = 0;
+    const images = slideshow.querySelectorAll('img');
+    images[index].classList.add('active');
+
+    setInterval(() => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+    }, 3000); // change every 2 seconds
+});
+</script>
+
+</body>
+</html>
